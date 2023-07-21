@@ -16,3 +16,12 @@ def fetch_numbers(url, queue):
                 queue.put(data["numbers"]) # Put the numbers list in the queue
     except Exception as e:
         print(e) # Handle any exceptions
+        
+# A function to merge and sort a list of lists of numbers
+def merge_and_sort(numbers_list):
+    merged = [] # Initialize an empty list
+    for numbers in numbers_list:
+        merged.extend(numbers) # Extend the merged list with each numbers list
+    merged = list(set(merged)) # Remove any duplicates
+    merged.sort() # Sort the merged list
+    return merged
